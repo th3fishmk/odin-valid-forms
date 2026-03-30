@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form-valid</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>Form validation!</h1>
+            <p>Welcome to the internet!</p>
+            <p>
+                In order to continue using the internet you have to agree giving
+                us all your information, so we can track the living hell out of
+                you
+            </p>
+            <p>
+                You should not ask any questions, otherwise you will be declared
+                a traitor of this nation.
+            </p>
+            <form id="data-steal">
+                <div class="form-wrapper">
+                    <p>
+                        Don't forget to add all your
+                        <strong>real</strong>
+                        information
+                    </p>
+                    <label for="first-name">
+                        <spam>Fist name:*</spam>
+                        <input
+                            type="text"
+                            id="first-name"
+                            name="first-name"
+                            required
+                        >
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                    <br>
+                    <label for="last-name">
+                        <span>Last name:*</span>
+                        <input
+                            type="text"
+                            id="last-name"
+                            name="last-name"
+                            required
+                        >
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                    <br>
+                    <label for="email-address">
+                        <span>Email*:</span>
+                        <input
+                            type="email"
+                            id="email-address"
+                            name="email"
+                            required
+                        >
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                    <br>
+                    <label for="country">
+                        <span>Country:*</span>
+                        <select id="country">
+                            <option value="ch">Switzerland</option>
+                            <option value="fr">France</option>
+                            <option value="de">Germany</option>
+                            <option value="nl">The Netherlands</option>
+                        </select>
+                        <span>Zip code:*</span>
+                        <input type="text" id="postal-code" required>
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                    <br>
+                    <label for="passwd">
+                        <span>Password:*</span>
+                        <input
+                            type="password"
+                            name="passwd"
+                            id="passwd"
+                            autocomplete="new-password"
+                            required
+                        >
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                    <br>
+                    <label for="passwd-confirm">
+                        <span>Repeat password</span>
+                        <input
+                            type="password"
+                            name="passwd-confirm"
+                            id="passwd-confirm"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+
+                    <div>
+                        <input type="checkbox" required checked>
+                        <label for="accepted" class="disclaimer">
+                            I authorize you to use my data however you want, to
+                            sell it, keep it, train LLMs and share it with the
+                            rest of the world, with no guarantees for safety,
+                            nor encryption whatsoever.
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" id="submit-button">
+                            Give up my info
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>
