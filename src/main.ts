@@ -24,9 +24,7 @@ const firstName = document.getElementById("first-name") as HTMLInputElement;
 const firstNameErrorSpace = document.querySelector(
     "#first-name + span",
 ) as HTMLSpanElement;
-firstName.addEventListener("input", () => {
-    validateFirstName();
-});
+firstName.addEventListener("input", validateFirstName);
 
 function validateFirstName(): boolean {
     if (!isValidName(firstName.value)) {
@@ -44,9 +42,7 @@ const lastName = document.getElementById("last-name") as HTMLInputElement;
 const errorDisplay = document.querySelector(
     "#last-name + span",
 ) as HTMLSpanElement;
-lastName.addEventListener("input", () => {
-    validateLastName();
-});
+lastName.addEventListener("input", validateLastName);
 
 function validateLastName() {
     if (!isValidName(lastName.value)) {
@@ -65,9 +61,7 @@ const emailErrorSpace = document.querySelector(
     "#email-address + span",
 ) as HTMLSpanElement;
 
-email.addEventListener("input", () => {
-    validateEmail();
-});
+email.addEventListener("input", validateEmail);
 
 function validateEmail() {
     email.setCustomValidity("");
@@ -114,15 +108,11 @@ const constraints: CountryData[] = [
 ];
 
 if (country) {
-    country.addEventListener("input", () => {
-        validateZipCode();
-    });
+    country.addEventListener("input", validateZipCode);
 }
 
 if (zipCode) {
-    zipCode.addEventListener("input", () => {
-        validateZipCode();
-    });
+    zipCode.addEventListener("input", validateZipCode);
 }
 
 function validateZipCode() {
@@ -158,9 +148,7 @@ const regexDigit = /\d/;
 const regexSpecialDigits = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
 if (passwd) {
-    passwd.addEventListener("input", () => {
-        validatePasswd();
-    });
+    passwd.addEventListener("input", validatePasswd);
 }
 
 function validatePasswd() {
@@ -211,9 +199,7 @@ const rePasswdError = document.querySelector(
 ) as HTMLSpanElement;
 
 if (rePasswd) {
-    rePasswd.addEventListener("input", () => {
-        validateRePasswd();
-    });
+    rePasswd.addEventListener("input", () => validateRePasswd);
 }
 
 function validateRePasswd(quiet = false) {
